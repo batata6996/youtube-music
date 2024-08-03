@@ -15,6 +15,8 @@ function createWindow () {
 
   mainWindow.loadURL('https://music.youtube.com');
 
+  mainWindow.maximize();
+
   mainWindow.on('minimize', (event) => {
     event.preventDefault();
     mainWindow.hide();
