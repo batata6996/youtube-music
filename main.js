@@ -9,6 +9,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    autoHideMenuBar: true,
     icon: path.join(__dirname, 'Design_sem_nome-removebg-preview.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
@@ -61,6 +62,7 @@ function createConfirmWindow() {
   confirmWindow = new BrowserWindow({
     width: 600,
     height: 300,
+    autoHideMenuBar: true,
     resizable: false,
     movable: true,
     minimizable: false,

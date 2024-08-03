@@ -1,12 +1,46 @@
 {
-  "name": "youtube-music-app",
+  "name": "youtube-music",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "devDependencies": {
-    "electron": "^31.3.1"
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.youtube-music.id",
+    "productName": "youtube music",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "confirm.html",
+      "confirm.css",
+      "confirm.js",
+      "styles.css",
+      "Design_sem_nome-removebg-preview.png",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      "path/to/extra/resources/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.music"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "Design_sem_nome-removebg-preview.ico"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
   }
 }
-  
