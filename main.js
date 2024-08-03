@@ -8,6 +8,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    icon: path.join(__dirname, 'Design_sem_nome-removebg-preview.png'),
+    autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -30,7 +32,7 @@ function createWindow () {
     return false;
   });
 
-  tray = new Tray(path.join(__dirname, 'youtube_music_android_tv_capa-removebg-preview.png'));
+  tray = new Tray(path.join(__dirname, 'Design_sem_nome-removebg-preview.png'));
   const contextMenu = Menu.buildFromTemplate([
     { label: 'Mostrar', click:  () => { mainWindow.show(); } },
     { label: 'Sair', click:  () => {
